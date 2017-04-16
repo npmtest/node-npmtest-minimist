@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-minimist/minimist/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-minimist/node_modules/minimist/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-minimist">npmtest-minimist (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-minimist/minimist/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-minimist/node_modules/minimist/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">5.22% <small>(7 / 134)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-minimist/minimist/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-minimist/node_modules/minimist/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -688,248 +686,249 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = <span class="fstat-no" title="function not covered" >function (args, opts) {</span>
-<span class="cstat-no" title="statement not covered" >    if (!opts) <span class="cstat-no" title="statement not covered" >opts = {};</span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = <span class="fstat-no" title="function not covered">function (args, opts) {</span>
+<span class="cstat-no" title="statement not covered">    if (!opts) <span class="cstat-no" title="statement not covered">opts = {};</span></span>
     
-<span class="cstat-no" title="statement not covered" >    var flags = { bools : {}, strings : {}, unknownFn: null };</span>
+<span class="cstat-no" title="statement not covered">    var flags = { bools : {}, strings : {}, unknownFn: null };</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof opts['unknown'] === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        flags.unknownFn = opts['unknown'];</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opts['unknown'] === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        flags.unknownFn = opts['unknown'];</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (typeof opts['boolean'] === 'boolean' &amp;&amp; opts['boolean']) {</span>
-<span class="cstat-no" title="statement not covered" >      flags.allBools = true;</span>
+<span class="cstat-no" title="statement not covered">    if (typeof opts['boolean'] === 'boolean' &amp;&amp; opts['boolean']) {</span>
+<span class="cstat-no" title="statement not covered">      flags.allBools = true;</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      [].concat(opts['boolean']).filter(Boolean).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >          flags.bools[key] = true;</span>
+<span class="cstat-no" title="statement not covered">      [].concat(opts['boolean']).filter(Boolean).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">          flags.bools[key] = true;</span>
       });
     }
     
-<span class="cstat-no" title="statement not covered" >    var aliases = {};</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(opts.alias || {}).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        aliases[key] = [].concat(opts.alias[key]);</span>
-<span class="cstat-no" title="statement not covered" >        aliases[key].forEach(<span class="fstat-no" title="function not covered" >function (x) {</span></span>
-<span class="cstat-no" title="statement not covered" >            aliases[x] = [key].concat(aliases[key].filter(<span class="fstat-no" title="function not covered" >function (y) {</span></span>
-<span class="cstat-no" title="statement not covered" >                return x !== y;</span>
+<span class="cstat-no" title="statement not covered">    var aliases = {};</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(opts.alias || {}).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">        aliases[key] = [].concat(opts.alias[key]);</span>
+<span class="cstat-no" title="statement not covered">        aliases[key].forEach(<span class="fstat-no" title="function not covered">function (x) {</span></span>
+<span class="cstat-no" title="statement not covered">            aliases[x] = [key].concat(aliases[key].filter(<span class="fstat-no" title="function not covered">function (y) {</span></span>
+<span class="cstat-no" title="statement not covered">                return x !== y;</span>
             }));
         });
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    [].concat(opts.string).filter(Boolean).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        flags.strings[key] = true;</span>
-<span class="cstat-no" title="statement not covered" >        if (aliases[key]) {</span>
-<span class="cstat-no" title="statement not covered" >            flags.strings[aliases[key]] = true;</span>
+<span class="cstat-no" title="statement not covered">    [].concat(opts.string).filter(Boolean).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">        flags.strings[key] = true;</span>
+<span class="cstat-no" title="statement not covered">        if (aliases[key]) {</span>
+<span class="cstat-no" title="statement not covered">            flags.strings[aliases[key]] = true;</span>
         }
      });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var defaults = opts['default'] || {};</span>
+<span class="cstat-no" title="statement not covered">    var defaults = opts['default'] || {};</span>
     
-<span class="cstat-no" title="statement not covered" >    var argv = { _ : [] };</span>
-<span class="cstat-no" title="statement not covered" >    Object.keys(flags.bools).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        setArg(key, defaults[key] === undefined ? false : defaults[key]);</span>
+<span class="cstat-no" title="statement not covered">    var argv = { _ : [] };</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(flags.bools).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">        setArg(key, defaults[key] === undefined ? false : defaults[key]);</span>
     });
     
-<span class="cstat-no" title="statement not covered" >    var notFlags = [];</span>
+<span class="cstat-no" title="statement not covered">    var notFlags = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (args.indexOf('--') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >        notFlags = args.slice(args.indexOf('--')+1);</span>
-<span class="cstat-no" title="statement not covered" >        args = args.slice(0, args.indexOf('--'));</span>
+<span class="cstat-no" title="statement not covered">    if (args.indexOf('--') !== -1) {</span>
+<span class="cstat-no" title="statement not covered">        notFlags = args.slice(args.indexOf('--')+1);</span>
+<span class="cstat-no" title="statement not covered">        args = args.slice(0, args.indexOf('--'));</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function argDefined(key, arg) {</span>
-<span class="cstat-no" title="statement not covered" >        return (flags.allBools &amp;&amp; /^--[^=]+$/.test(arg)) ||</span>
+<span class="fstat-no" title="function not covered">    function argDefined(key, arg) {</span>
+<span class="cstat-no" title="statement not covered">        return (flags.allBools &amp;&amp; /^--[^=]+$/.test(arg)) ||</span>
             flags.strings[key] || flags.bools[key] || aliases[key];
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function setArg (key, val, arg) {</span>
-<span class="cstat-no" title="statement not covered" >        if (arg &amp;&amp; flags.unknownFn &amp;&amp; !argDefined(key, arg)) {</span>
-<span class="cstat-no" title="statement not covered" >            if (flags.unknownFn(arg) === false) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="fstat-no" title="function not covered">    function setArg (key, val, arg) {</span>
+<span class="cstat-no" title="statement not covered">        if (arg &amp;&amp; flags.unknownFn &amp;&amp; !argDefined(key, arg)) {</span>
+<span class="cstat-no" title="statement not covered">            if (flags.unknownFn(arg) === false) <span class="cstat-no" title="statement not covered">return;</span></span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        var value = !flags.strings[key] &amp;&amp; isNumber(val)</span>
+<span class="cstat-no" title="statement not covered">        var value = !flags.strings[key] &amp;&amp; isNumber(val)</span>
             ? Number(val) : val
         ;
-<span class="cstat-no" title="statement not covered" >        setKey(argv, key.split('.'), value);</span>
+<span class="cstat-no" title="statement not covered">        setKey(argv, key.split('.'), value);</span>
         
-<span class="cstat-no" title="statement not covered" >        (aliases[key] || []).forEach(<span class="fstat-no" title="function not covered" >function (x) {</span></span>
-<span class="cstat-no" title="statement not covered" >            setKey(argv, x.split('.'), value);</span>
+<span class="cstat-no" title="statement not covered">        (aliases[key] || []).forEach(<span class="fstat-no" title="function not covered">function (x) {</span></span>
+<span class="cstat-no" title="statement not covered">            setKey(argv, x.split('.'), value);</span>
         });
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function setKey (obj, keys, value) {</span>
-<span class="cstat-no" title="statement not covered" >        var o = obj;</span>
-<span class="cstat-no" title="statement not covered" >        keys.slice(0,-1).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >            if (o[key] === undefined) <span class="cstat-no" title="statement not covered" >o[key] = {};</span></span>
-<span class="cstat-no" title="statement not covered" >            o = o[key];</span>
+<span class="fstat-no" title="function not covered">    function setKey (obj, keys, value) {</span>
+<span class="cstat-no" title="statement not covered">        var o = obj;</span>
+<span class="cstat-no" title="statement not covered">        keys.slice(0,-1).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">            if (o[key] === undefined) <span class="cstat-no" title="statement not covered">o[key] = {};</span></span>
+<span class="cstat-no" title="statement not covered">            o = o[key];</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        var key = keys[keys.length - 1];</span>
-<span class="cstat-no" title="statement not covered" >        if (o[key] === undefined || flags.bools[key] || typeof o[key] === 'boolean') {</span>
-<span class="cstat-no" title="statement not covered" >            o[key] = value;</span>
+<span class="cstat-no" title="statement not covered">        var key = keys[keys.length - 1];</span>
+<span class="cstat-no" title="statement not covered">        if (o[key] === undefined || flags.bools[key] || typeof o[key] === 'boolean') {</span>
+<span class="cstat-no" title="statement not covered">            o[key] = value;</span>
         }
-        else <span class="cstat-no" title="statement not covered" >if (Array.isArray(o[key])) {</span>
-<span class="cstat-no" title="statement not covered" >            o[key].push(value);</span>
+        else <span class="cstat-no" title="statement not covered">if (Array.isArray(o[key])) {</span>
+<span class="cstat-no" title="statement not covered">            o[key].push(value);</span>
         }
         else {
-<span class="cstat-no" title="statement not covered" >            o[key] = [ o[key], value ];</span>
+<span class="cstat-no" title="statement not covered">            o[key] = [ o[key], value ];</span>
         }
     }
     
-<span class="fstat-no" title="function not covered" >    function aliasIsBoolean(key) {</span>
-<span class="cstat-no" title="statement not covered" >      return aliases[key].some(<span class="fstat-no" title="function not covered" >function (x) {</span></span>
-<span class="cstat-no" title="statement not covered" >          return flags.bools[x];</span>
+<span class="fstat-no" title="function not covered">    function aliasIsBoolean(key) {</span>
+<span class="cstat-no" title="statement not covered">      return aliases[key].some(<span class="fstat-no" title="function not covered">function (x) {</span></span>
+<span class="cstat-no" title="statement not covered">          return flags.bools[x];</span>
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; args.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        var arg = args[i];</span>
+<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; args.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">        var arg = args[i];</span>
         
-<span class="cstat-no" title="statement not covered" >        if (/^--.+=/.test(arg)) {</span>
+<span class="cstat-no" title="statement not covered">        if (/^--.+=/.test(arg)) {</span>
             // Using [\s\S] instead of . because js doesn't support the
             // 'dotall' regex modifier. See:
             // http://stackoverflow.com/a/1068308/13216
-<span class="cstat-no" title="statement not covered" >            var m = arg.match(/^--([^=]+)=([\s\S]*)$/);</span>
-<span class="cstat-no" title="statement not covered" >            var key = m[1];</span>
-<span class="cstat-no" title="statement not covered" >            var value = m[2];</span>
-<span class="cstat-no" title="statement not covered" >            if (flags.bools[key]) {</span>
-<span class="cstat-no" title="statement not covered" >                value = value !== 'false';</span>
+<span class="cstat-no" title="statement not covered">            var m = arg.match(/^--([^=]+)=([\s\S]*)$/);</span>
+<span class="cstat-no" title="statement not covered">            var key = m[1];</span>
+<span class="cstat-no" title="statement not covered">            var value = m[2];</span>
+<span class="cstat-no" title="statement not covered">            if (flags.bools[key]) {</span>
+<span class="cstat-no" title="statement not covered">                value = value !== 'false';</span>
             }
-<span class="cstat-no" title="statement not covered" >            setArg(key, value, arg);</span>
+<span class="cstat-no" title="statement not covered">            setArg(key, value, arg);</span>
         }
-        else <span class="cstat-no" title="statement not covered" >if (/^--no-.+/.test(arg)) {</span>
-<span class="cstat-no" title="statement not covered" >            var key = arg.match(/^--no-(.+)/)[1];</span>
-<span class="cstat-no" title="statement not covered" >            setArg(key, false, arg);</span>
+        else <span class="cstat-no" title="statement not covered">if (/^--no-.+/.test(arg)) {</span>
+<span class="cstat-no" title="statement not covered">            var key = arg.match(/^--no-(.+)/)[1];</span>
+<span class="cstat-no" title="statement not covered">            setArg(key, false, arg);</span>
         }
-        else <span class="cstat-no" title="statement not covered" >if (/^--.+/.test(arg)) {</span>
-<span class="cstat-no" title="statement not covered" >            var key = arg.match(/^--(.+)/)[1];</span>
-<span class="cstat-no" title="statement not covered" >            var next = args[i + 1];</span>
-<span class="cstat-no" title="statement not covered" >            if (next !== undefined &amp;&amp; !/^-/.test(next)</span>
+        else <span class="cstat-no" title="statement not covered">if (/^--.+/.test(arg)) {</span>
+<span class="cstat-no" title="statement not covered">            var key = arg.match(/^--(.+)/)[1];</span>
+<span class="cstat-no" title="statement not covered">            var next = args[i + 1];</span>
+<span class="cstat-no" title="statement not covered">            if (next !== undefined &amp;&amp; !/^-/.test(next)</span>
             &amp;&amp; !flags.bools[key]
             &amp;&amp; !flags.allBools
             &amp;&amp; (aliases[key] ? !aliasIsBoolean(key) : true)) {
-<span class="cstat-no" title="statement not covered" >                setArg(key, next, arg);</span>
-<span class="cstat-no" title="statement not covered" >                i++;</span>
+<span class="cstat-no" title="statement not covered">                setArg(key, next, arg);</span>
+<span class="cstat-no" title="statement not covered">                i++;</span>
             }
-            else <span class="cstat-no" title="statement not covered" >if (/^(true|false)$/.test(next)) {</span>
-<span class="cstat-no" title="statement not covered" >                setArg(key, next === 'true', arg);</span>
-<span class="cstat-no" title="statement not covered" >                i++;</span>
+            else <span class="cstat-no" title="statement not covered">if (/^(true|false)$/.test(next)) {</span>
+<span class="cstat-no" title="statement not covered">                setArg(key, next === 'true', arg);</span>
+<span class="cstat-no" title="statement not covered">                i++;</span>
             }
             else {
-<span class="cstat-no" title="statement not covered" >                setArg(key, flags.strings[key] ? '' : true, arg);</span>
+<span class="cstat-no" title="statement not covered">                setArg(key, flags.strings[key] ? '' : true, arg);</span>
             }
         }
-        else <span class="cstat-no" title="statement not covered" >if (/^-[^-]+/.test(arg)) {</span>
-<span class="cstat-no" title="statement not covered" >            var letters = arg.slice(1,-1).split('');</span>
+        else <span class="cstat-no" title="statement not covered">if (/^-[^-]+/.test(arg)) {</span>
+<span class="cstat-no" title="statement not covered">            var letters = arg.slice(1,-1).split('');</span>
             
-<span class="cstat-no" title="statement not covered" >            var broken = false;</span>
-<span class="cstat-no" title="statement not covered" >            for (var j = 0; j &lt; letters.length; j++) {</span>
-<span class="cstat-no" title="statement not covered" >                var next = arg.slice(j+2);</span>
+<span class="cstat-no" title="statement not covered">            var broken = false;</span>
+<span class="cstat-no" title="statement not covered">            for (var j = 0; j &lt; letters.length; j++) {</span>
+<span class="cstat-no" title="statement not covered">                var next = arg.slice(j+2);</span>
                 
-<span class="cstat-no" title="statement not covered" >                if (next === '-') {</span>
-<span class="cstat-no" title="statement not covered" >                    setArg(letters[j], next, arg)</span>
-<span class="cstat-no" title="statement not covered" >                    continue;</span>
+<span class="cstat-no" title="statement not covered">                if (next === '-') {</span>
+<span class="cstat-no" title="statement not covered">                    setArg(letters[j], next, arg)</span>
+<span class="cstat-no" title="statement not covered">                    continue;</span>
                 }
                 
-<span class="cstat-no" title="statement not covered" >                if (/[A-Za-z]/.test(letters[j]) &amp;&amp; /=/.test(next)) {</span>
-<span class="cstat-no" title="statement not covered" >                    setArg(letters[j], next.split('=')[1], arg);</span>
-<span class="cstat-no" title="statement not covered" >                    broken = true;</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                if (/[A-Za-z]/.test(letters[j]) &amp;&amp; /=/.test(next)) {</span>
+<span class="cstat-no" title="statement not covered">                    setArg(letters[j], next.split('=')[1], arg);</span>
+<span class="cstat-no" title="statement not covered">                    broken = true;</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 }
                 
-<span class="cstat-no" title="statement not covered" >                if (/[A-Za-z]/.test(letters[j])</span>
+<span class="cstat-no" title="statement not covered">                if (/[A-Za-z]/.test(letters[j])</span>
                 &amp;&amp; /-?\d+(\.\d*)?(e-?\d+)?$/.test(next)) {
-<span class="cstat-no" title="statement not covered" >                    setArg(letters[j], next, arg);</span>
-<span class="cstat-no" title="statement not covered" >                    broken = true;</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    setArg(letters[j], next, arg);</span>
+<span class="cstat-no" title="statement not covered">                    broken = true;</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 }
                 
-<span class="cstat-no" title="statement not covered" >                if (letters[j+1] &amp;&amp; letters[j+1].match(/\W/)) {</span>
-<span class="cstat-no" title="statement not covered" >                    setArg(letters[j], arg.slice(j+2), arg);</span>
-<span class="cstat-no" title="statement not covered" >                    broken = true;</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                if (letters[j+1] &amp;&amp; letters[j+1].match(/\W/)) {</span>
+<span class="cstat-no" title="statement not covered">                    setArg(letters[j], arg.slice(j+2), arg);</span>
+<span class="cstat-no" title="statement not covered">                    broken = true;</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 }
                 else {
-<span class="cstat-no" title="statement not covered" >                    setArg(letters[j], flags.strings[letters[j]] ? '' : true, arg);</span>
+<span class="cstat-no" title="statement not covered">                    setArg(letters[j], flags.strings[letters[j]] ? '' : true, arg);</span>
                 }
             }
             
-<span class="cstat-no" title="statement not covered" >            var key = arg.slice(-1)[0];</span>
-<span class="cstat-no" title="statement not covered" >            if (!broken &amp;&amp; key !== '-') {</span>
-<span class="cstat-no" title="statement not covered" >                if (args[i+1] &amp;&amp; !/^(-|--)[^-]/.test(args[i+1])</span>
+<span class="cstat-no" title="statement not covered">            var key = arg.slice(-1)[0];</span>
+<span class="cstat-no" title="statement not covered">            if (!broken &amp;&amp; key !== '-') {</span>
+<span class="cstat-no" title="statement not covered">                if (args[i+1] &amp;&amp; !/^(-|--)[^-]/.test(args[i+1])</span>
                 &amp;&amp; !flags.bools[key]
                 &amp;&amp; (aliases[key] ? !aliasIsBoolean(key) : true)) {
-<span class="cstat-no" title="statement not covered" >                    setArg(key, args[i+1], arg);</span>
-<span class="cstat-no" title="statement not covered" >                    i++;</span>
+<span class="cstat-no" title="statement not covered">                    setArg(key, args[i+1], arg);</span>
+<span class="cstat-no" title="statement not covered">                    i++;</span>
                 }
-                else <span class="cstat-no" title="statement not covered" >if (args[i+1] &amp;&amp; /true|false/.test(args[i+1])) {</span>
-<span class="cstat-no" title="statement not covered" >                    setArg(key, args[i+1] === 'true', arg);</span>
-<span class="cstat-no" title="statement not covered" >                    i++;</span>
+                else <span class="cstat-no" title="statement not covered">if (args[i+1] &amp;&amp; /true|false/.test(args[i+1])) {</span>
+<span class="cstat-no" title="statement not covered">                    setArg(key, args[i+1] === 'true', arg);</span>
+<span class="cstat-no" title="statement not covered">                    i++;</span>
                 }
                 else {
-<span class="cstat-no" title="statement not covered" >                    setArg(key, flags.strings[key] ? '' : true, arg);</span>
+<span class="cstat-no" title="statement not covered">                    setArg(key, flags.strings[key] ? '' : true, arg);</span>
                 }
             }
         }
         else {
-<span class="cstat-no" title="statement not covered" >            if (!flags.unknownFn || flags.unknownFn(arg) !== false) {</span>
-<span class="cstat-no" title="statement not covered" >                argv._.push(</span>
+<span class="cstat-no" title="statement not covered">            if (!flags.unknownFn || flags.unknownFn(arg) !== false) {</span>
+<span class="cstat-no" title="statement not covered">                argv._.push(</span>
                     flags.strings['_'] || !isNumber(arg) ? arg : Number(arg)
                 );
             }
-<span class="cstat-no" title="statement not covered" >            if (opts.stopEarly) {</span>
-<span class="cstat-no" title="statement not covered" >                argv._.push.apply(argv._, args.slice(i + 1));</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered">            if (opts.stopEarly) {</span>
+<span class="cstat-no" title="statement not covered">                argv._.push.apply(argv._, args.slice(i + 1));</span>
+<span class="cstat-no" title="statement not covered">                break;</span>
             }
         }
     }
     
-<span class="cstat-no" title="statement not covered" >    Object.keys(defaults).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!hasKey(argv, key.split('.'))) {</span>
-<span class="cstat-no" title="statement not covered" >            setKey(argv, key.split('.'), defaults[key]);</span>
+<span class="cstat-no" title="statement not covered">    Object.keys(defaults).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!hasKey(argv, key.split('.'))) {</span>
+<span class="cstat-no" title="statement not covered">            setKey(argv, key.split('.'), defaults[key]);</span>
             
-<span class="cstat-no" title="statement not covered" >            (aliases[key] || []).forEach(<span class="fstat-no" title="function not covered" >function (x) {</span></span>
-<span class="cstat-no" title="statement not covered" >                setKey(argv, x.split('.'), defaults[key]);</span>
+<span class="cstat-no" title="statement not covered">            (aliases[key] || []).forEach(<span class="fstat-no" title="function not covered">function (x) {</span></span>
+<span class="cstat-no" title="statement not covered">                setKey(argv, x.split('.'), defaults[key]);</span>
             });
         }
     });
     
-<span class="cstat-no" title="statement not covered" >    if (opts['--']) {</span>
-<span class="cstat-no" title="statement not covered" >        argv['--'] = new Array();</span>
-<span class="cstat-no" title="statement not covered" >        notFlags.forEach(<span class="fstat-no" title="function not covered" >function(key) {</span></span>
-<span class="cstat-no" title="statement not covered" >            argv['--'].push(key);</span>
+<span class="cstat-no" title="statement not covered">    if (opts['--']) {</span>
+<span class="cstat-no" title="statement not covered">        argv['--'] = new Array();</span>
+<span class="cstat-no" title="statement not covered">        notFlags.forEach(<span class="fstat-no" title="function not covered">function(key) {</span></span>
+<span class="cstat-no" title="statement not covered">            argv['--'].push(key);</span>
         });
     }
     else {
-<span class="cstat-no" title="statement not covered" >        notFlags.forEach(<span class="fstat-no" title="function not covered" >function(key) {</span></span>
-<span class="cstat-no" title="statement not covered" >            argv._.push(key);</span>
+<span class="cstat-no" title="statement not covered">        notFlags.forEach(<span class="fstat-no" title="function not covered">function(key) {</span></span>
+<span class="cstat-no" title="statement not covered">            argv._.push(key);</span>
         });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return argv;</span>
+<span class="cstat-no" title="statement not covered">    return argv;</span>
 };
 &nbsp;
-<span class="fstat-no" title="function not covered" >function hasKey (obj, keys) {</span>
-<span class="cstat-no" title="statement not covered" >    var o = obj;</span>
-<span class="cstat-no" title="statement not covered" >    keys.slice(0,-1).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
-<span class="cstat-no" title="statement not covered" >        o = (o[key] || {});</span>
+<span class="fstat-no" title="function not covered">function hasKey (obj, keys) {</span>
+<span class="cstat-no" title="statement not covered">    var o = obj;</span>
+<span class="cstat-no" title="statement not covered">    keys.slice(0,-1).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
+<span class="cstat-no" title="statement not covered">        o = (o[key] || {});</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var key = keys[keys.length - 1];</span>
-<span class="cstat-no" title="statement not covered" >    return key in o;</span>
+<span class="cstat-no" title="statement not covered">    var key = keys[keys.length - 1];</span>
+<span class="cstat-no" title="statement not covered">    return key in o;</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function isNumber (x) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof x === 'number') <span class="cstat-no" title="statement not covered" >return true;</span></span>
-<span class="cstat-no" title="statement not covered" >    if (/^0x[0-9a-f]+$/i.test(x)) <span class="cstat-no" title="statement not covered" >return true;</span></span>
-<span class="cstat-no" title="statement not covered" >    return /^[-+]?(?:\d+(?:\.\d*)?|\.\d+)(e[-+]?\d+)?$/.test(x);</span>
+<span class="fstat-no" title="function not covered">function isNumber (x) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof x === 'number') <span class="cstat-no" title="statement not covered">return true;</span></span>
+<span class="cstat-no" title="statement not covered">    if (/^0x[0-9a-f]+$/i.test(x)) <span class="cstat-no" title="statement not covered">return true;</span></span>
+<span class="cstat-no" title="statement not covered">    return /^[-+]?(?:\d+(?:\.\d*)?|\.\d+)(e[-+]?\d+)?$/.test(x);</span>
 }
 &nbsp;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 06:39:26 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sun Apr 16 2017 08:42:53 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
